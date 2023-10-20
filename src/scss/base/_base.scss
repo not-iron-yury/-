@@ -1,0 +1,27 @@
+body {
+	display: flex;
+    flex-direction: column;
+	min-height: 100vh;
+	background-color: var(--back-main);
+	color: var(--dark);
+    font-family: var(--font-main);
+	font-size: 16px;
+	font-weight: 400;
+	scroll-behavior: smooth;
+}
+
+/*-------------utils---------------*/
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+/*-------------/utils---------------*/
+
