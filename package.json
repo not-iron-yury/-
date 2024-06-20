@@ -19,7 +19,6 @@
 		"gulp-sass": "^5.1.0",
 		"gulp-sass-glob": "^1.1.0",
 		"gulp-server-livereload": "^1.9.2",
-		"gulp-sourcemaps": "^3.0.0",
 		"gulp-ttf2woff": "^1.1.1",
 		"gulp-typograf": "^4.1.0",
 		"gulp-webp-css": "^1.1.0",
@@ -27,8 +26,7 @@
 		"i": "^0.3.7",
 		"npm": "^9.7.2",
 		"sass": "^1.63.4",
-		"style-loader": "^3.3.3",
-		"webpack-stream": "^7.0.0"
+		"style-loader": "^3.3.3"
 	},
 	"babel": {
 		"presets": [

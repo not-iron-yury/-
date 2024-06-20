@@ -6,13 +6,13 @@
 @import "./base/containers";
 /* Blocks */
 @import "./blocks/header";
-
+@import "./blocks/footer";
+@import "./blocks/houses";
 
 /*-------------hero--------------*/
 
-
 .hero {
-	background-image: url('../img/hozbloki-dlya-dachi.jpg');
+	background-image: url("../img/hozbloki-dlya-dachi.jpg");
 	padding: 50px 0;
 	height: 600px;
 	background-repeat: no-repeat;
@@ -22,7 +22,7 @@
 }
 
 .hero--small {
-	background-image: url('../img/hozbloky-malenkie.jpg');
+	background-image: url("../img/hozbloky-malenkie.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	object-fit: cover;
@@ -30,7 +30,7 @@
 }
 
 .hero--matall {
-	background-image: url('../img/hero-metall.jpg');
+	background-image: url("../img/hero-metall.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
 	object-fit: cover;
@@ -60,7 +60,7 @@
 }
 
 .hero__title {
-	font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);;
+	font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
 	font-weight: 700;
 	min-width: 300px;
 }
@@ -82,7 +82,7 @@
 	justify-content: center;
 	width: 920px;
 	background-color: var(--white);
-	box-shadow: 4px 4px 5px rgba(0,0,0,0.23);
+	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.23);
 }
 @media (max-width: 960px) {
 	.white-block {
@@ -112,8 +112,8 @@
 }
 h2 {
 	font-size: clamp(1rem, 1vw + 1rem, 1.75rem);
-    text-align: center;
-    margin-bottom: 8px;
+	text-align: center;
+	margin-bottom: 8px;
 }
 /*-------------why--------------*/
 .why__block {
@@ -124,20 +124,20 @@ h2 {
 	font-size: clamp(0.95rem, 1vw + 0.5rem, 1.3rem);
 }
 
-.why__list :not(:last-child){
+.why__list :not(:last-child) {
 	margin-bottom: 7px;
 }
 
-.why__item{
+.why__item {
 	display: flex;
 	align-items: center;
 }
 
 .why__item::before {
-	content: '';
+	content: "";
 	width: 20px;
 	height: 20px;
-	background: url('../img/check.png');
+	background: url("../img/check.png");
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin-right: 10px;
@@ -145,12 +145,11 @@ h2 {
 
 /*-------------/why--------------*/
 /*--------------products----------------*/
-.products{
+.products {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin-bottom: 100px;
-
 }
 .text__container {
 	max-width: 860px;
@@ -159,11 +158,11 @@ h2 {
 	margin: 0 auto;
 }
 
-.text__container :not(:last-child){
+.text__container :not(:last-child) {
 	margin-bottom: 8px;
 }
 
-.products__text{
+.products__text {
 	margin: 0 auto 40px;
 }
 @media (max-width: 960px) {
@@ -195,43 +194,43 @@ h2 {
 	.product summary {
 		margin-bottom: 15px;
 	}
-	.product{
+	.product {
 		margin: 0 auto;
 	}
 }
-.product{
+.product {
 	max-width: 360px;
-    min-width: 287px;
-    background-color: var(--white);
+	min-width: 287px;
+	background-color: var(--white);
 	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.23);
 }
 
 .product_info {
-    padding: 5px 20px 0px;
+	padding: 5px 20px 0px;
 }
 .product__line {
-    height: 1px;
-    background: var(--grey);
-    margin: 10px 0;
+	height: 1px;
+	background: var(--grey);
+	margin: 10px 0;
 }
 .product__name {
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.5;
+	font-size: 1.25rem;
+	font-weight: 700;
+	line-height: 1.5;
 }
 .product__model {
-    font-size: 1.1rem;
-    font-weight: 400;
-    line-height: 1.5;
+	font-size: 1.1rem;
+	font-weight: 400;
+	line-height: 1.5;
 }
 .product__price {
-    font-size: 1.1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--red-text);
+	font-size: 1.1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: var(--red-text);
 }
 
-.product__price span{
+.product__price span {
 	font-weight: 700;
 }
 .product summary {
@@ -239,7 +238,7 @@ h2 {
 }
 
 .product__details {
-    margin-top: 15px;
+	margin-top: 15px;
 }
 /*
 .product__bonus ::before {
@@ -249,27 +248,27 @@ h2 {
 }
 */
 .product__compl :not(.compl-red) {
-    list-style: disc;
+	list-style: disc;
 }
 .compl {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 .compl-red {
-    margin-top: 10px;
-    color: var(--chocolate);
-    font-size: 0.94rem;
-    font-weight: 700;
+	margin-top: 10px;
+	color: var(--chocolate);
+	font-size: 0.94rem;
+	font-weight: 700;
 }
 .compl-red span {
 	color: var(--dark);
 	//font-weight: 400;
 }
 .compl-black {
-    margin-left: 23px;
-    font-size: 0.94rem;
+	margin-left: 23px;
+	font-size: 0.94rem;
 }
 
-.products__cta{
+.products__cta {
 	max-width: 560px;
 	width: 100%;
 	text-align: center;
@@ -282,25 +281,24 @@ h2 {
 .cta-prod__desc {
 	margin-bottom: 5px;
 }
-.cta-prod__phone{
+.cta-prod__phone {
 	font-size: 1.5rem;
 }
 /*--------------/products----------------*/
 
-
 /*--------------delivery----------------*/
 
-.delivery__block img{
+.delivery__block img {
 	max-width: 400px;
 	//width: 100%;
 }
 @media (max-width: 960px) {
-	.delivery__block img{
+	.delivery__block img {
 		max-width: 300px;
 	}
 }
 @media (max-width: 768px) {
-	.delivery__block{
+	.delivery__block {
 		flex-direction: column;
 		align-items: center;
 		padding-bottom: 30px;
@@ -321,7 +319,7 @@ h2 {
 .delivery__title {
 	margin-bottom: 10px;
 }
-.delivery__link{
+.delivery__link {
 	font-size: 1.1rem;
 	color: var(--green);
 	transition: 0.2s linear;
@@ -330,7 +328,7 @@ h2 {
 /*--------------/delivery----------------*/
 
 /*--------------text----------------*/
-.text{
+.text {
 	margin-bottom: 100px;
 }
 .text__list {
@@ -365,21 +363,21 @@ h2 {
 	align-items: center;
 	text-align: center;
 }
-.options__item img{
+.options__item img {
 	margin-bottom: 5px;
 }
 .options__link {
 	font-size: 1.1rem;
-    color: var(--green);
-    transition: 0.2s linear;
+	color: var(--green);
+	transition: 0.2s linear;
 }
 
-@media(max-width: 768px){
+@media (max-width: 768px) {
 	.options__list {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 20px;
 	}
-	.options__item img{
+	.options__item img {
 		width: 45px;
 	}
 }
@@ -395,7 +393,7 @@ h2 {
 	margin-bottom: 100px;
 	text-align: center;
 }
-.cta__phone{
+.cta__phone {
 	display: inline-block;
 	margin-top: 0px;
 	font-size: 1.5rem;
@@ -403,7 +401,7 @@ h2 {
 .cta__list {
 	text-align: center;
 }
-.cta__list :not(:last-child){
+.cta__list :not(:last-child) {
 	margin-bottom: 5px;
 }
 .cta__item {
@@ -426,17 +424,12 @@ h2 {
 */
 /*--------------/CTA----------------*/
 
-
-/*--------------footer----------------*/
-@import "./blocks/footer";
-/*--------------/footer----------------*/
 .error {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: var(--back-main);
 	height: 100vh;
-
 }
 .error_box {
 	max-width: 600px;
@@ -454,7 +447,7 @@ h2 {
 	width: 100%;
 	margin-bottom: 25px;
 }
-.error_link{
+.error_link {
 	color: grey;
 }
 .error_link:hover {
