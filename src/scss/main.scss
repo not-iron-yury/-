@@ -96,9 +96,9 @@
 	.why__block {
 		padding: 20px 30px;
 	}
-	.why__item::before {
-		padding-left: 17px;
-	}
+	// .why__item::before {
+	// 	padding-left: 15px;
+	// }
 }
 @media (max-width: 576px) {
 	.white-block {
@@ -107,7 +107,7 @@
 }
 @media (max-width: 420px) {
 	.white-block {
-		width: 320px;
+		width: 300px;
 	}
 }
 h2 {
@@ -117,6 +117,9 @@ h2 {
 }
 /*-------------why--------------*/
 .why__block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	padding: 33px 0;
 }
 
@@ -131,6 +134,8 @@ h2 {
 .why__item {
 	display: flex;
 	align-items: center;
+	position: relative;
+	padding-left: 30px;
 }
 
 .why__item::before {
@@ -140,9 +145,27 @@ h2 {
 	background: url("../img/check.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	margin-right: 10px;
+	margin-right: 15px;
 }
 
+@media (max-width: 420px) {
+	.why__item::before {
+		position: absolute;
+		top: 3px;
+		left: 0;
+		width: 16px;
+		height: 16px;
+	}
+}
+@media (max-width: 576px) {
+	.why__item::before {
+		position: absolute;
+		top: 3px;
+		left: 0;
+		width: 16px;
+		height: 16px;
+	}
+}
 /*-------------/why--------------*/
 /*--------------products----------------*/
 .products {
@@ -192,6 +215,7 @@ h2 {
 		grid-template-columns: repeat(1, 1fr);
 	}
 	.product summary {
+		cursor: pointer;
 		margin-bottom: 15px;
 	}
 	.product {
@@ -234,6 +258,8 @@ h2 {
 	font-weight: 700;
 }
 .product summary {
+	color: var(--green);
+	font-weight: 700;
 	margin-bottom: 10px;
 }
 
