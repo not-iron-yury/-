@@ -91,7 +91,7 @@ function switchDetails() {
 		}
 	}
 	if (window.innerWidth > 768) {
-		let details = document.querySelectorAll(".product__details");
+		let details = document.querySelectorAll(".product__details ");
 		for (elem of details) {
 			elem.removeAttribute("close");
 			elem.setAttribute("open", true);
