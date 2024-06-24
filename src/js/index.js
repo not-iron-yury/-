@@ -81,6 +81,10 @@ menu.addEventListener("click", (e) => {
 switchDetails();
 window.addEventListener("resize", switchDetails);
 
+// function prevDef(e) {
+// 	e.preventDefault();
+// }
+
 function switchDetails() {
 	if (window.innerWidth < 769) {
 		let details = document.querySelectorAll(".product__details");
@@ -88,6 +92,7 @@ function switchDetails() {
 			elem.removeAttribute("open");
 			elem.setAttribute("close", true);
 			elem.setAttribute("onclick", "return true");
+			// elem.removeEventListene("click", prevDef);
 		}
 	}
 	if (window.innerWidth > 768) {
@@ -96,6 +101,7 @@ function switchDetails() {
 			elem.removeAttribute("close");
 			elem.setAttribute("open", true);
 			elem.setAttribute("onclick", "return false");
+			// elem.addEventListener("click", prevDef);
 		}
 	}
 }
