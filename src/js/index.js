@@ -105,3 +105,39 @@ function switchDetails() {
 		}
 	}
 }
+
+// --------------------- модалка ---------------------//
+
+// // повесить слушатели на все кнопки
+// // объявить обработчик
+
+// const modal = document.querySelector(".modal");
+// const modalBody = document.querySelector(".modal__body");
+
+// // слушатель на модалку
+// modal.addEventListener("click", closeModal);
+
+// // слушатели на все кнопки
+// const modalBtnAll = document.querySelectorAll("[data-model]");
+// modalBtnAll.forEach((elem) => {
+// 	elem.addEventListener("click", openModal);
+// });
+
+// // закрытие модалки по ESC
+// document.addEventListener("keydown", function (event) {
+// 	const key = event.key;
+// 	if (key === "Escape") {
+// 		modal.classList.remove("modal-active");
+// 	}
+// });
+
+// // открытие модалки
+// function openModal(event) {
+// 	modal.classList.add("modal-active");
+// }
+// // закрытие модалки
+// function closeModal(event) {
+// 	if (event.target == modal) {
+// 		modal.classList.remove("modal-active");
+// 	}
+// }
