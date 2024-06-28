@@ -106,6 +106,31 @@ function switchDetails() {
 	}
 }
 
+// --------------------- JS события Яндекс Метрики ---------------------//
+// const summaryAll = document.querySelectorAll(".product__details summary");
+// for (elem of summaryAll) {
+// 	elem.setAttribute(
+// 		"onclick",
+// 		"ym(43781124, 'reachGoal', 'click-details'); return true;"
+// 	);
+// }
+
+// document
+// 	.querySelector(".cta-prod__phone")
+// 	.setAttribute(
+// 		"onclick",
+// 		"ym(43781124, 'reachGoal', 'phone-1'); return true;"
+// 	);
+
+// document
+// 	.querySelector(".cta__phone")
+// 	.setAttribute(
+// 		"onclick",
+// 		"ym(43781124, 'reachGoal', 'phone-2'); return true;"
+// 	);
+
+//onclick = "ym(43781124, 'reachGoal', 'TARGET_NAME'); return true;"
+
 // --------------------- модалка ---------------------//
 
 // // повесить слушатели на все кнопки
