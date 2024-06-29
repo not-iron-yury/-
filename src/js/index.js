@@ -1,3 +1,4 @@
+"use strict";
 // --------------------- мобильное меню ---------------------//
 const menu = document.querySelector(".nav");
 const burger = document.querySelector(".burger");
@@ -81,27 +82,21 @@ menu.addEventListener("click", (e) => {
 switchDetails();
 window.addEventListener("resize", switchDetails);
 
-// function prevDef(e) {
-// 	e.preventDefault();
-// }
-
 function switchDetails() {
 	if (window.innerWidth < 769) {
 		let details = document.querySelectorAll(".product__details");
-		for (elem of details) {
-			elem.removeAttribute("open");
-			elem.setAttribute("close", true);
-			elem.setAttribute("onclick", "return true");
-			// elem.removeEventListene("click", prevDef);
+		for (let i = 0, len = details.length; i < len; i++) {
+			details[i].removeAttribute("open");
+			details[i].setAttribute("close", true);
+			details[i].setAttribute("onclick", "return true");
 		}
 	}
 	if (window.innerWidth > 768) {
 		let details = document.querySelectorAll(".product__details ");
-		for (elem of details) {
-			elem.removeAttribute("close");
-			elem.setAttribute("open", true);
-			elem.setAttribute("onclick", "return false");
-			// elem.addEventListener("click", prevDef);
+		for (let i = 0, len = details.length; i < len; i++) {
+			details[i].removeAttribute("close");
+			details[i].setAttribute("open", true);
+			details[i].setAttribute("onclick", "return false");
 		}
 	}
 }

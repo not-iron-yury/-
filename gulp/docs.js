@@ -5,7 +5,6 @@ const fileInclude = require("gulp-file-include");
 const htmlclean = require("gulp-htmlclean");
 const webpHTML = require("gulp-webp-html");
 const typograf = require("gulp-typograf");
-//const formatHTML = require('gulp-format-html');	// форматирование html
 
 // SASS
 const sass = require("gulp-sass")(require("sass"));
@@ -22,6 +21,7 @@ const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
 const babel = require("gulp-babel");
 const changed = require("gulp-changed");
+const removeHtmlComments = require("gulp-remove-html-comments");
 
 // Images
 //const imagemin = require('gulp-imagemin');
@@ -52,15 +52,18 @@ const plumberNotify = (title) => {
 };
 
 gulp.task("html:docs", function () {
-	return gulp
-		.src("./src/html/*.html")
-		.pipe(changed("./docs/"))
-		.pipe(plumber(plumberNotify("HTML")))
-		.pipe(fileInclude(fileIncludeSetting))
-		.pipe(typograf({ locale: ["ru", "en-US"] }))
-		.pipe(webpHTML()) // or .pipe(webpHTML(['.jpg', '.svg']))
-		.pipe(htmlclean()) // минимизация кода
-		.pipe(gulp.dest("./docs/"));
+	return (
+		gulp
+			// .src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
+			.src("./src/html/*.html")
+			.pipe(changed("./docs/"))
+			.pipe(removeHtmlComments())
+			.pipe(plumber(plumberNotify("HTML")))
+			.pipe(fileInclude(fileIncludeSetting))
+			.pipe(typograf({ locale: ["ru", "en-US"] }))
+			.pipe(htmlclean()) // минимизация кода
+			.pipe(gulp.dest("./docs/"))
+	);
 });
 
 gulp.task("sass:docs", function () {
@@ -70,7 +73,6 @@ gulp.task("sass:docs", function () {
 		.pipe(plumber(plumberNotify("SCSS")))
 		.pipe(autoprefixer())
 		.pipe(sassGlob())
-		.pipe(webpCss()) // or .pipe(webpCss(['.jpg','.jpeg']))
 		.pipe(sass())
 		.pipe(csso())
 		.pipe(groupMedia())
