@@ -1,58 +1,47 @@
 .modal {
+	display: none;
 	position: fixed;
 	top: 0;
-	left: 0;
-	bottom: 0;
 	right: 0;
-	background-color: rgba(0, 0, 0, 0.7);
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.75);
 	z-index: 1000;
 
-	display: none;
 	align-items: center;
 	justify-content: center;
-
-	&.modal-active {
-		display: flex;
-	}
 }
 
-.modal__body {
+.modal--active {
+	display: flex;
+}
+.modal__container {
 	position: relative;
+	display: flex;
+	justify-content: center;
 	max-width: 400px;
+	width: 100%;
 	min-width: 290px;
 	background-color: #fff;
 	border-radius: 2px;
-	padding: 40px 30px 40px;
+	text-align: center;
+	padding: 40px 30px;
 }
-.btn-close {
+.modal__close {
 	position: absolute;
 	top: 0;
 	right: 0;
-	font-size: 20px;
-	border-radius: 20px;
-	padding: 5px 12px;
+	width: 35px;
+	height: 35px;
+	font-size: 25px;
+	color: #000000;
+	border: 1px solid rgba(128, 128, 128, 0.15);
 }
-.modal__title {
-	font-size: 15px;
-	margin-bottom: 7px;
-}
-.modal__descr {
-	font-size: 15px;
-	margin-bottom: 20px;
-}
-.form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-
-	&__input {
-		width: 100%;
-		padding: 10px;
-		background-color: #ebebeb;
-		border-radius: 2px;
-		margin-bottom: 15px;
-	}
-	&__btn {
-	}
+.disable-scroll {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	width: 100%;
 }

@@ -1,0 +1,37 @@
+<div class="modal" id="modal">
+	<div class="modal__container">
+		<button class="modal__close" id="modal-close">×</button>
+		<form class="form" action="mail.php" method="post">
+			<!--
+        Добавить в .htaccess следующие правила:
+          RewriteEngine on
+          RewriteRule ^mail.php$ - [F]
+      -->
+			<div class="form__field">
+				<label class="form__label form__label--name" for="name"
+					>Ваше имя</label
+				>
+				<input
+					class="form__input form__input--name"
+					type="text"
+					id="name"
+					name="name"
+					autocomplete="off"
+				/>
+			</div>
+			<div class="form__field form__input--tel">
+				<label class="form__label form__label--tel" for="tel"
+					>Номер телефона<span>*</span></label
+				>
+				<input
+					class="form__input form__input--tel"
+					type="tel"
+					id="tel"
+					name="tel"
+					required
+				/>
+			</div>
+			<button class="btn">Отправить заявку</button>
+		</form>
+	</div>
+</div>
