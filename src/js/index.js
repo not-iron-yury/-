@@ -216,6 +216,7 @@ inputTel.addEventListener("change", (e) => {
 form.addEventListener("submit", async function (e) {
 	e.preventDefault();
 	const tel = inputTel.value.replace(/[\s\(\)]/g, "");
+
 	if (telValidate) {
 		const data = {
 			name: inputName.value,
@@ -224,7 +225,7 @@ form.addEventListener("submit", async function (e) {
 			price: form.dataset.productPrice,
 		};
 
-		const response = await fetch("mail.php", {
+		const response = await fetch("./files/mail.php", {
 			method: "POST",
 			body: JSON.stringify(data),
 			headers: {
