@@ -112,12 +112,14 @@ buttonsModal.forEach((elem) => {
 	elem.addEventListener("click", (e) => {
 		openModal();
 
-		const parent = elem.parentNode.parentNode;
-		form.dataset.productModel =
-			parent.querySelector(".product__name").textContent;
-		form.dataset.productPrice = parent.querySelector(
-			".product__price span"
-		).textContent;
+		if (elem.getAttribute("data-model") !== "cta") {
+			const productCard = elem.parentNode.parentNode;
+			form.dataset.productModel =
+				productCard.querySelector(".product__name").textContent;
+			form.dataset.productPrice = productCard.querySelector(
+				".product__price span"
+			).textContent;
+		}
 	});
 });
 
@@ -215,17 +217,18 @@ inputTel.addEventListener("change", (e) => {
 
 form.addEventListener("submit", async function (e) {
 	e.preventDefault();
+
 	const tel = inputTel.value.replace(/[\s\(\)]/g, "");
 
 	if (telValidate) {
 		const data = {
 			name: inputName.value,
 			tel: tel,
-			model: form.dataset.productModel,
+			model: form.dataset.productModel || "Заявка на консультацию",
 			price: form.dataset.productPrice,
 		};
 
-		const response = await fetch("./files/mail.php", {
+		const response = await fetch("./../files/mail.php", {
 			method: "POST",
 			body: JSON.stringify(data),
 			headers: {
@@ -234,6 +237,9 @@ form.addEventListener("submit", async function (e) {
 		});
 		if (response.ok) {
 			closeModal();
+			inputName.value = "";
+			inputTel.value = "";
+
 			//window.location.href = 'https://новый url'
 		}
 	}

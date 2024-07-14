@@ -494,20 +494,30 @@ h2 {
 	justify-content: center;
 	margin-bottom: 100px;
 	text-align: center;
+
+	&__phone {
+		display: inline-block;
+		margin-top: 0px;
+		font-size: 1.5rem;
+	}
+
+	&__list {
+		text-align: center;
+	}
+	&__item {
+		font-size: 17px;
+
+		&--subdesc {
+			font-size: 15px;
+		}
+	}
+	&__action {
+		margin-top: 21px;
+	}
 }
-.cta__phone {
-	display: inline-block;
-	margin-top: 0px;
-	font-size: 1.5rem;
-}
-.cta__list {
-	text-align: center;
-}
+
 .cta__list :not(:last-child) {
 	margin-bottom: 5px;
-}
-.cta__item {
-	font-size: 1rem;
 }
 
 /*--------------/CTA----------------*/

@@ -20,7 +20,7 @@ $body = '<p>Имя: <strong>'.$name.'</strong></p>'.
         '<p>Телефон: <a href="tel:'.$tel.'">'.$tel.'</a> <p>'.
         '<p>Модель: <strong>'.$model.'</strong></p>'.
         '<p>Цена на сайте: <strong>'.$price.'</strong></p>';
-``,
+
 // Настройки PHPMailer
 $mail = new PHPMailer\PHPMailer\PHPMailer();
 
