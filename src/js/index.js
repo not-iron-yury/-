@@ -109,10 +109,19 @@ const form = document.querySelector(".form");
 
 // открытие модалки
 buttonsModal.forEach((elem) => {
+	// вешаем коды Метрики на кнопки
+	if (isProductCard(elem)) {
+		elem.setAttribute("onclick", "ym(43781124,'reachGoal','form-product')");
+	} else {
+		elem.setAttribute("onclick", "ym(43781124,'reachGoal','form-consult')");
+	}
+
+	// вешаем слушатель на клик по кнопке
 	elem.addEventListener("click", (e) => {
 		openModal();
 
-		if (elem.getAttribute("data-model") !== "cta") {
+		// если кнопка карточки, передаем заголовок товара и его цену в форму
+		if (isProductCard(elem)) {
 			const productCard = elem.parentNode.parentNode;
 			form.dataset.productModel =
 				productCard.querySelector(".product__name").textContent;
@@ -122,6 +131,10 @@ buttonsModal.forEach((elem) => {
 		}
 	});
 });
+
+function isProductCard(elem) {
+	return elem.getAttribute("data-model") !== "cta";
+}
 
 // закрытие по кнопке "close"
 modalClosse.addEventListener("click", closeModal);
@@ -228,7 +241,7 @@ form.addEventListener("submit", async function (e) {
 			price: form.dataset.productPrice,
 		};
 
-		const response = await fetch("./../files/mail.php", {
+		const response = await fetch("mail.php", {
 			method: "POST",
 			body: JSON.stringify(data),
 			headers: {
@@ -236,16 +249,35 @@ form.addEventListener("submit", async function (e) {
 			},
 		});
 		if (response.ok) {
-			closeModal();
-			inputName.value = "";
-			inputTel.value = "";
+			form.classList.add("form__hidden");
+			modal.querySelector(".modal__container").textContent =
+				"Ваша заявка принята. Мы свяжемся с Вами в ближайшее время.";
 
-			//window.location.href = 'https://новый url'
+			setTimeout(() => {
+				closeModal();
+			}, 2700);
+			//inputName.value = "";
+			//inputTel.value = "";
+			//form.classList.remove("form__hidden");
+			//window.location.href =
+			//("https://xn-----8kcbqbqjfnke5ad4hzb2i.xn--p1ai/заявка-отправлена.html");
 		}
 	}
 });
 
+// ----------------------------- кнопка UP -----------------------------//
+
+const upButton = document.getElementById("up-button");
+
+upButton.addEventListener("click", () => {
+	window.scrollTo({
+		top: 0,
+		behavior: "smooth",
+	});
+});
+
 // --------------------- JS события Яндекс Метрики ---------------------//
+
 // const summaryAll = document.querySelectorAll(".product__details summary");
 // for (elem of summaryAll) {
 // 	elem.setAttribute(

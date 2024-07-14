@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta
 			name="description"
 			content="На этой странице вы можете выбрать и купить блок контейнер для дачи от производителя с доставкой по Москве и Московской области."
@@ -41,16 +42,19 @@
 		@@include('blocks/header.html')
 		<section class="hero hero--metall">
 			<div class="container container__hero">
-				<h1 class="hero__title">
-					Блок контейнеры для дачи от производителя
+				<h1 class="hero__title hero__title--metall">
+					Блок контейнер для дачи от производителя
 				</h1>
-				<p class="hero__desc">
-					Готовые конструкции или сборка на участке
-				</p>
+				<div class="hero__content">
+					<p class="hero__desc">
+						Готовые конструкции или сборка на участке
+					</p>
+					@@include('blocks/UI/hero__links.html')
+				</div>
 			</div>
 		</section>
 		@@include('blocks/why.html')
-		<section class="products">
+		<section class="products" id="price">
 			<div class="container products__container">
 				<div class="products__text text">
 					<h2 class="text__title">Блок контейнеры металлические</h2>

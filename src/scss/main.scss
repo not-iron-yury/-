@@ -15,12 +15,13 @@
 
 .hero {
 	background-image: url("../img/hozbloki-dlya-dachi.jpg");
-	padding: 50px 0;
 	height: 600px;
 	background-repeat: no-repeat;
 	background-position: center;
 	object-fit: cover;
 	overflow: hidden;
+	padding: 50px 0;
+	margin-bottom: 50px;
 }
 
 .hero--small {
@@ -33,6 +34,7 @@
 
 .hero--metall {
 	background-image: url("../img/hero-metall.jpg");
+
 	background-repeat: no-repeat;
 	background-position: center;
 	object-fit: cover;
@@ -46,9 +48,52 @@
 }
 @media (max-width: 576px) {
 	.hero {
-		background: none;
-		height: 270px;
-		margin-bottom: 0px;
+		background-image: url("../img/bg-mob.jpg");
+		background-color: rgba(0, 0, 0, 0.5);
+		background-blend-mode: darken;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		height: auto;
+		margin-bottom: 70px;
+	}
+
+	.hero--metall {
+		background-image: url("../img/bg-mob-metall.jpg");
+	}
+	.container__hero {
+		height: auto;
+		color: #fff;
+		padding: 40px 15px;
+	}
+	.hero__title {
+		font-size: clamp(2.25rem, 4vw + 1rem, 2.625rem);
+		padding: 0 25px;
+		margin-bottom: 50px;
+	}
+	.hero__title--metall {
+		font-size: clamp(1.95rem, 4vw + 1rem, 2.625rem);
+	}
+	.hero__desc {
+		font-size: clamp(1.125rem, 2vw + 1rem, 1.875rem);
+		margin-bottom: 50px;
+	}
+
+	.hero__list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+	}
+	.hero__item:not(:last-child) {
+		margin-bottom: 15px;
+	}
+	.hero__link {
+		font-size: 20px;
+		color: rgb(230, 230, 230);
+		&:active {
+			color: var(--green);
+		}
 	}
 }
 .container__hero {
@@ -56,7 +101,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	max-width: 900px;
-	height: 95%;
+	height: 100%;
 	align-items: center;
 	text-align: center;
 }
@@ -70,6 +115,13 @@
 .hero__desc {
 	font-size: clamp(1.188rem, 1vw + 0.75rem, 1.5rem);
 	min-width: 300px;
+	margin-bottom: 20px;
+}
+
+@media (min-width: 577px) {
+	.hero__list {
+		display: none;
+	}
 }
 /*-------------/hero--------------*/
 
@@ -110,8 +162,9 @@
 	}
 }
 h2 {
-	font-size: clamp(1rem, 1vw + 1rem, 1.75rem);
+	font-size: clamp(1.4rem, 1vw + 1rem, 1.75rem);
 	text-align: center;
+
 	margin-bottom: 8px;
 }
 /*-------------why--------------*/
@@ -367,7 +420,7 @@ h2 {
 }
 @media (max-width: 960px) {
 	.delivery__block img {
-		max-width: 300px;
+		max-width: 290px;
 	}
 }
 @media (max-width: 768px) {
@@ -684,21 +737,6 @@ h2 {
 }
 
 @media (max-width: 576px) {
-	.hero {
-		background: 0 0;
-		height: 270px;
-		margin-bottom: 0;
-	}
-
-	.white-block {
-		width: 380px;
-	}
-
-	.footer__container {
-		font-size: 95%;
-		gap: 20px;
-		padding: 30px 15px;
-	}
 	.options__img {
 		width: 25px;
 		height: 25px;

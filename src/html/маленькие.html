@@ -44,14 +44,19 @@
 		@@include('blocks/header.html')
 		<section class="hero hero--small">
 			<div class="container container__hero container__hero--small">
-				<h1 class="hero__title">Маленький хозблок для дачи недорого</h1>
-				<p class="hero__desc">
-					Готовые конструкции или сборка на участке
-				</p>
+				<h1 class="hero__title">
+					Маленькие хозблоки для дачи недорого
+				</h1>
+				<div class="hero__content">
+					<p class="hero__desc">
+						Доставка по Москве и Московской области
+					</p>
+					@@include('blocks/UI/hero__links.html')
+				</div>
 			</div>
 		</section>
 		@@include('blocks/why.html')
-		<section class="products">
+		<section class="products" id="price">
 			<div class="container products__container">
 				<div class="products__text text">
 					<h2 class="text__title">

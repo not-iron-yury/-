@@ -18,10 +18,14 @@
 .modal__container {
 	position: relative;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 	justify-content: center;
 	max-width: 400px;
 	width: 100%;
 	min-width: 290px;
+	max-height: 332px;
+	height: 100%;
 	background-color: #fff;
 	border-radius: 2px;
 	text-align: center;
@@ -37,6 +41,11 @@
 	color: #000000;
 	border: 1px solid rgba(128, 128, 128, 0.15);
 }
+
+.modal__descr {
+	font-size: 15px;
+}
+
 .disable-scroll {
 	position: relative;
 	overflow: hidden;

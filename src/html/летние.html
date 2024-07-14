@@ -46,13 +46,16 @@
 		<section class="hero">
 			<div class="container container__hero">
 				<h1 class="hero__title">Летние хозблоки для дачи недорого</h1>
-				<p class="hero__desc">
-					Готовые конструкции или сборка на участке
-				</p>
+				<div class="hero__content">
+					<p class="hero__desc">
+						Готовые конструкции или сборка на участке
+					</p>
+					@@include('blocks/UI/hero__links.html')
+				</div>
 			</div>
 		</section>
 		@@include('blocks/why.html')
-		<section class="products">
+		<section class="products" id="price">
 			<div class="container products__container">
 				<div class="products__text text">
 					<h2 class="text__title">Купить летний хозблок</h2>
