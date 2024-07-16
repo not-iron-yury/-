@@ -3,7 +3,6 @@ const gulp = require("gulp");
 // HTML
 const fileInclude = require("gulp-file-include");
 const htmlclean = require("gulp-htmlclean");
-const webpHTML = require("gulp-webp-html");
 const typograf = require("gulp-typograf");
 
 // SASS
@@ -11,7 +10,6 @@ const sass = require("gulp-sass")(require("sass"));
 const sassGlob = require("gulp-sass-glob");
 const autoprefixer = require("gulp-autoprefixer");
 const csso = require("gulp-csso");
-const webpCss = require("gulp-webp-css");
 const groupMedia = require("gulp-group-css-media-queries");
 
 const server = require("gulp-server-livereload");
@@ -22,10 +20,6 @@ const notify = require("gulp-notify");
 const babel = require("gulp-babel");
 const changed = require("gulp-changed");
 const removeHtmlComments = require("gulp-remove-html-comments");
-
-// Images
-//const imagemin = require('gulp-imagemin');
-//const webp = require('gulp-webp');
 
 gulp.task("clean:docs", function (done) {
 	if (fs.existsSync("./docs/")) {

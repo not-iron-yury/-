@@ -39,17 +39,21 @@ try {
   $mail->setFrom('user.name@inbox.ru', 'Заявка с сайта'); // Адрес почты и имя отправителя
 
   // Получатель письма
-  $mail->addAddress('user.name@inbox.ru');
+  $mail->addAddress('user.name@inbox.ru.com');
 
   // Отправка сообщения
-  $mail->isHTML(true);
-  $mail->Subject = $title;
-  $mail->Body = $body;
+  if ($tel != '') {
+    $mail->isHTML(true);
+    $mail->Subject = $title;
+    $mail->Body = $body;
 
-  $mail->send('d');
+    $mail->send('d');
+    
+    // Сообщение об успешной отправке
+    echo ('Сообщение отправлено успешно!');
+  }
 
-  // Сообщение об успешной отправке
-  echo ('Сообщение отправлено успешно!');
+
 
 } catch (Exception $e) {
   header('HTTP/1.1 400 Bad Request');
