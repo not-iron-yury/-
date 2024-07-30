@@ -8,6 +8,7 @@
 @import "./blocks/header";
 @import "./blocks/footer";
 @import "./blocks/houses";
+@import "./blocks/services";
 @import "./blocks/modal";
 @import "./blocks/form";
 
@@ -292,7 +293,7 @@ h2 {
 	font-weight: 400;
 	text-align: start;
 	white-space: wrap;
-	padding: 5px 3px;
+	padding: 5px 8px;
 }
 
 /*---------------- /text -----------------*/
@@ -614,49 +615,33 @@ h2 {
 }
 
 /*--------------infopage----------------*/
-.infopage__h1 {
-	font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
-	font-weight: 700;
-	max-width: 750px;
-	text-align: center;
-	margin: 0 auto 50px;
-}
 .infopage {
 	margin: 50px auto 80px;
-}
-.infopage-h1 {
-	text-align: center;
-	margin-bottom: 30px;
-}
-.infopage__text {
-	margin-bottom: 7px;
-}
-.infopage__img {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 20px;
-	margin: 50px auto;
-}
-.infopage__img picture {
-	margin: 0 auto;
-}
 
-.buy-list {
-	max-width: 540px;
-	margin: 0 auto;
-	padding-left: 15px;
-}
-.buy-list :not(:last-child) {
-	margin-bottom: 5px;
-}
-.infopage__item h3 {
-	font-size: 1.2rem;
-	font-weight: 700;
-	margin-top: 10px;
-}
-.infopage__sublist li {
-	list-style: disc;
-	margin-left: 20px;
+	&__h1 {
+		font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+		font-weight: 700;
+		max-width: 750px;
+		text-align: center;
+		margin: 0 auto 50px;
+	}
+	&__h2 {
+		font-size: 1.3rem;
+		font-weight: 700;
+		text-align: left;
+		margin-top: 8px;
+	}
+	&__text {
+		line-height: 1.5;
+		margin-bottom: 10px;
+	}
+	&__item {
+		margin-bottom: 30px;
+	}
+	&__sublist li {
+		list-style: disc;
+		margin-left: 20px;
+	}
 }
 
 /*-----------contacts-----------*/

@@ -1,0 +1,77 @@
+.service {
+	margin: 50px auto 0;
+
+	&__title {
+		font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+		font-weight: 700;
+		max-width: 750px;
+		text-align: center;
+		margin: 0 auto 50px;
+	}
+
+	&__h2 {
+		font-size: clamp(1rem, 1vw + 1rem, 1.75rem);
+		text-align: left;
+	}
+
+	&__main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-bottom: 100px;
+	}
+
+	&__row {
+		display: grid;
+		align-items: center;
+		grid-template-columns: 0.9fr 1fr;
+		gap: 20px;
+
+		&:not(:last-child) {
+			margin-bottom: 100px;
+		}
+	}
+
+	&__text {
+		line-height: 1.5;
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.service__row--reverse {
+	grid-template-columns: 1fr 0.9fr;
+}
+
+.service__row--reverse .service__info {
+	order: 1;
+}
+.service__row--reverse .service__img,
+.service__row--reverse picture {
+	order: 2;
+}
+
+.service__img {
+	width: 100%;
+}
+
+@media (max-width: 968px) {
+	.service__row {
+		grid-template-columns: 100%;
+		padding: 0 15px;
+	}
+	.service__row :not(:last-child) {
+		margin-right: 15px;
+	}
+	.service__row {
+		margin-bottom: 15px;
+	}
+	.service__row--reverse .service__info {
+		order: 2;
+	}
+	.service__row--reverse .service__img,
+	.service__row--reverse picture {
+		order: 1;
+	}
+}
