@@ -24,7 +24,7 @@
 	&__row {
 		display: grid;
 		align-items: center;
-		grid-template-columns: 0.9fr 1fr;
+		grid-template-columns: repeat(2, 1fr);
 		gap: 20px;
 
 		&:not(:last-child) {
@@ -38,22 +38,61 @@
 			margin-bottom: 15px;
 		}
 	}
+
+	&__swiper {
+		position: relative;
+	}
 }
 
-.service__row--reverse {
-	grid-template-columns: 1fr 0.9fr;
+.swiper {
+	max-width: 600px;
+	width: 100%;
 }
+.service-swiper__list {
+	height: 430px;
+}
+.service-swiper__nav {
+	position: absolute;
+	bottom: -15px;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	width: 90px;
+	z-index: 100;
+}
+.btn--swiper {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	background-color: rgba(0, 0, 0, 0.15);
+
+	& svg {
+		fill: rgb(230, 230, 230);
+	}
+
+	&:hover {
+		background-color: var(--green);
+		transition: background-color 0.3s ease-in-out;
+		& svg {
+			fill: rgb(255, 255, 255);
+		}
+	}
+}
+// ==================================== //
+.swiper-pagination-bullet-active {
+	background: var(--green);
+}
+
+// .service__row--reverse {
+// 	grid-template-columns: 1fr 0.9fr;
+// }
 
 .service__row--reverse .service__info {
 	order: 1;
 }
-.service__row--reverse .service__img,
+.service__row--reverse .service__swiper,
 .service__row--reverse picture {
 	order: 2;
-}
-
-.service__img {
-	width: 100%;
 }
 
 @media (max-width: 968px) {
