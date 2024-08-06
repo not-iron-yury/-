@@ -83,3 +83,21 @@ const swiper_4 = new Swiper("#swiper-4", {
 			el: '.swiper-scrollbar',
 		},
 });
+
+const swiper_5 = new Swiper("#swiper-5", {
+	slidesPerView: 1,
+	loop: true,
+
+	pagination: {
+    el: '.swiper-pagination',
+  },
+
+	navigation: {
+		nextEl: "#swiper-5--next",
+		prevEl: "#swiper-5--prev",
+	},
+	  // And if we need scrollbar
+		scrollbar: {
+			el: '.swiper-scrollbar',
+		},
+});

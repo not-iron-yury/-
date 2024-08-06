@@ -18,7 +18,8 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		margin-bottom: 100px;
+		margin-top: 100px;
+		margin-bottom: 200px;
 	}
 
 	&__row {
@@ -29,6 +30,15 @@
 
 		&:not(:last-child) {
 			margin-bottom: 100px;
+		}
+	}
+
+	&__row--reverse {
+		& .service__info {
+			order: 1;
+		}
+		& .service__swiper {
+			order: 2;
 		}
 	}
 
@@ -48,28 +58,32 @@
 	max-width: 600px;
 	width: 100%;
 }
-.service-swiper__list {
-	height: 430px;
+
+.service-swiper {
+	&__list {
+		height: 430px;
+	}
+
+	&__nav {
+		display: block;
+		position: absolute;
+		bottom: -15px;
+		right: 0;
+		display: flex;
+		justify-content: space-between;
+		width: 90px;
+		z-index: 100;
+	}
 }
-.service-swiper__nav {
-	position: absolute;
-	bottom: -15px;
-	right: 0;
-	display: flex;
-	justify-content: space-between;
-	width: 90px;
-	z-index: 100;
-}
+
 .btn--swiper {
 	width: 40px;
 	height: 40px;
 	border-radius: 100%;
 	background-color: rgba(0, 0, 0, 0.15);
-
 	& svg {
 		fill: rgb(230, 230, 230);
 	}
-
 	&:hover {
 		background-color: var(--green);
 		transition: background-color 0.3s ease-in-out;
@@ -78,39 +92,97 @@
 		}
 	}
 }
-// ==================================== //
 .swiper-pagination-bullet-active {
 	background: var(--green);
 }
 
-// .service__row--reverse {
-// 	grid-template-columns: 1fr 0.9fr;
-// }
-
-.service__row--reverse .service__info {
-	order: 1;
+// ==================== таблица ==================== //
+table tr th {
+	width: 100%;
 }
-.service__row--reverse .service__swiper,
-.service__row--reverse picture {
-	order: 2;
+table tr {
+	display: flex;
+	justify-content: space-around;
 }
 
 @media (max-width: 968px) {
-	.service__row {
-		grid-template-columns: 100%;
-		padding: 0 15px;
+	.table-wrapper {
+		display: flex;
+		gap: 20px;
 	}
-	.service__row :not(:last-child) {
-		margin-right: 15px;
-	}
-	.service__row {
-		margin-bottom: 15px;
-	}
-	.service__row--reverse .service__info {
-		order: 2;
-	}
-	.service__row--reverse .service__img,
-	.service__row--reverse picture {
-		order: 1;
+
+	table tr th {
+		width: auto;
 	}
 }
+
+@media (max-width: 500px) {
+	.table-wrapper {
+		flex-direction: column;
+	}
+}
+
+// ==================== /таблица =================== //
+
+@media (max-width: 1024px) {
+	.service__main {
+		margin-bottom: 100px;
+	}
+}
+
+@media (max-width: 968px) {
+	.service__main {
+		margin-top: 70px;
+		margin-bottom: 150px;
+	}
+	.service__h2 {
+		text-align: center;
+	}
+	.service__row {
+		grid-template-columns: 100%;
+		margin-bottom: 15px;
+	}
+	.service__row--reverse {
+		& .service__info {
+			order: 2;
+		}
+		& .service__swiper {
+			order: 1;
+		}
+	}
+	.service__title {
+		max-width: 80vw;
+	}
+	.swiper {
+		width: 95vw;
+	}
+	.service-swiper__nav {
+		display: none;
+	}
+	.swiper-pagination-bullet {
+		position: relative;
+		top: 5px;
+		width: 10px;
+		height: 10px;
+		border: 2px solid white;
+		opacity: 1;
+		//background: rgb(139, 139, 139);
+	}
+	.swiper-pagination-bullet-active {
+		background: var(--green);
+	}
+	.service-swiper__list {
+		height: auto;
+	}
+}
+
+@media (max-width: 576px) {
+	.swiper {
+		width: 90vw;
+	}
+}
+// @media (max-width: 420px) {
+// 	.swiper {
+// 		width: 90vw;
+// 	}
+// }
