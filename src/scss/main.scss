@@ -7,10 +7,13 @@
 /* Blocks */
 @import "./blocks/header";
 @import "./blocks/footer";
-@import "./blocks/houses";
-@import "./blocks/services";
 @import "./blocks/modal";
 @import "./blocks/form";
+@import "./blocks/swiper-hero-second.scss";
+/* Pages */
+@import "./pages/houses";
+@import "./pages/services";
+@import "./pages/second-page";
 
 /*-------------hero--------------*/
 
@@ -642,7 +645,6 @@ h2 {
 		list-style: disc;
 		margin-left: 20px;
 	}
-
 }
 
 /*-----------contacts-----------*/
