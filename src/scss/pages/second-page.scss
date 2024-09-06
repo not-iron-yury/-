@@ -1,5 +1,9 @@
+.second-page-body {
+	background-color: #fff;
+	//background-color: #f8f8f8;
+}
 .second-page-hero {
-	margin: 0 auto;
+	margin: 0 0 120px;
 
 	&__title {
 		font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
@@ -7,5 +11,141 @@
 		max-width: 750px;
 		text-align: center;
 		margin: 50px auto 100px;
+		transition: margin 0.2s ease-in-out;
+	}
+}
+@media (max-width: 420px) {
+	.second-page-hero {
+		&__title {
+			transition: margin 0.2s ease-in-out;
+			margin: 50px auto 30px;
+		}
+	}
+}
+@media (max-width: 960px) {
+	.second-page-hero {
+		&__title {
+			margin: 50px auto 50px;
+		}
+	}
+}
+//-----------------------------------------------//
+.second-page-flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 15px;
+
+	&__table {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-self: center;
+		max-width: 510px;
+		min-width: 460px;
+		width: 100%;
+		box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.12);
+	}
+
+	&__descr {
+		max-width: 600px;
+	}
+}
+
+.sp-ttx {
+	margin-bottom: 120px;
+
+	&__h2 {
+		text-align: left;
+		margin-bottom: 45px;
+	}
+	&__text:not(:last-child) {
+		margin-bottom: 15px;
+	}
+	&__table {
+		background: rgb(253, 253, 253);
+		border-top: 1px solid rgb(245, 245, 245);
+		border-left: 1px solid rgb(245, 245, 245);
+		padding: 60px 20px;
+	}
+	&__h3 {
+		font-weight: 400;
+		font-size: 25px;
+		line-height: 130%;
+		margin-bottom: 20px;
+	}
+}
+.table-ttx {
+	max-width: 440px;
+	font-size: clamp(0.875rem, 0.6vw + 0.5rem, 1rem);
+
+	&__row {
+		margin-bottom: 10px;
+	}
+	&__name {
+		width: 42%;
+		&--th {
+			font-weight: normal;
+			text-align: start;
+		}
+	}
+	&__values {
+		width: 58%;
+		&--th {
+			font-weight: normal;
+			text-align: start;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.ttx {
+		&__h2 {
+			margin-bottom: 30px;
+		}
+		&__container {
+			flex-direction: column;
+			gap: 50px;
+		}
+		&__values {
+			max-width: 620px;
+			min-width: 300px;
+		}
+
+		.table-ttx {
+			max-width: 640px;
+			min-width: 290px;
+		}
+	}
+}
+@media (max-width: 960px) {
+	.ttx {
+		&__values {
+			min-width: 400px;
+			padding: 40px 10px;
+		}
+	}
+}
+//-----------------------------------------------//
+.sp-prices {
+	&__container {
+		display: flex;
+	}
+	&__table {
+	}
+	&__descr {
+	}
+	&__text {
+	}
+}
+
+.table-spprices {
+	&__head {
+	}
+	&__row {
+	}
+	&__plan {
+	}
+	&__price {
 	}
 }

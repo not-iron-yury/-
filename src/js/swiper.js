@@ -8500,6 +8500,16 @@ const terraceNavSwiper = new Swiper("#swpr-terrace-nav", {
 	slidesPerView: 8,
 	freeMode: true,
 	watchSlidesProgress: true,
+	breakpoints: {
+		0: {
+			spaceBetween: 5,
+			slidesPerView: 8,
+		},
+		576: {
+			spaceBetween: 10,
+			slidesPerView: 8,
+		},
+	},
 });
 
 const terraceSwiper = new Swiper("#swpr-terrace", {

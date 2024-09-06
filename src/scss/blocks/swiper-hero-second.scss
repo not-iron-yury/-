@@ -1,5 +1,4 @@
 .swpr {
-	max-width: 1180px;
 	margin: 0 auto;
 }
 
@@ -12,17 +11,14 @@
 	&__slide {
 		cursor: pointer;
 	}
-
 	&__btn {
 		width: 40px;
 		height: 40px;
 		border-radius: 100%;
 		background-color: rgb(255, 255, 255, 0.7);
-
 		position: absolute;
 		top: 50%;
 		z-index: 2;
-
 		& svg {
 			fill: rgb(75, 75, 75);
 		}
@@ -33,7 +29,6 @@
 				fill: rgb(255, 255, 255);
 			}
 		}
-
 		&--prev {
 			left: 32px;
 		}
@@ -43,7 +38,48 @@
 	}
 }
 
-.btn-swiper {
+@media (max-width: 576px) {
+	.swpr-terrace {
+		&__btn {
+			width: 30px;
+			height: 99.5%;
+			border-radius: 0;
+			background-color: rgba(0, 0, 0, 0);
+			top: 0;
+			& svg {
+				fill: rgba(255, 255, 255, 0.2);
+			}
+			&:hover {
+				background-color: rgba(0, 0, 0, 0);
+				transition: background-color 0.25s ease-in-out;
+				& svg {
+					fill: rgba(255, 255, 255, 0.4);
+				}
+			}
+			&--prev {
+				left: 0;
+			}
+			&--next {
+				right: 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.swpr-terrace {
+		&__content {
+			margin-bottom: 10px;
+		}
+		&__btn {
+			&--prev {
+				left: 12px;
+			}
+			&--next {
+				right: 12px;
+			}
+		}
+	}
 }
 
 .swpr-terrace-nav {
@@ -57,7 +93,6 @@
 		border-radius: 4px;
 		transition: opacity 0.25s ease-in-out;
 		cursor: pointer;
-
 		&:hover,
 		&:active {
 			opacity: 1;

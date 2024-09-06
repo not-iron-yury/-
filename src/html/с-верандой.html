@@ -25,16 +25,18 @@
 		<link rel="stylesheet" href="./css/main.css" media="all" />
 		@@include('analitycs/google.html') @@include('analitycs/yandex.html')
 	</head>
-	<body>
+	<body class="second-page-body">
 		@@include('blocks/header.html')
 		<section class="second-page-hero">
 			<div class="container">
 				<h1 class="second-page-hero__title">
 					Хозблоки с верандой для дачи
 				</h1>
-				@@include('blocks/swiper-hero-second--terrace.html')
+				@@include('blocks-2/swiper-hero-second--terrace.html')
 			</div>
 		</section>
+		@@include('blocks-2/ttx.html') @@include('blocks-2/prices.html')
+		<!--	-->
 		@@include('blocks/cta.html')@@include('blocks/modal-window.html')
 		@@include('blocks/footer.html')
 		<script src="./js/index.js"></script>
