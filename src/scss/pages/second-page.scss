@@ -1,11 +1,12 @@
-.second-page-body {
-	background-color: #fff;
-	//background-color: #f8f8f8;
+.body--second-page {
+	background-color: #fff; // #f8f8f8
 }
-.second-page-hero {
-	margin: 0 0 120px;
+//-----------------------------------------------//
 
-	&__title {
+.second-page {
+	margin-bottom: 120px;
+
+	&__h1 {
 		font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
 		font-weight: 700;
 		max-width: 750px;
@@ -13,48 +14,6 @@
 		margin: 50px auto 100px;
 		transition: margin 0.2s ease-in-out;
 	}
-}
-@media (max-width: 420px) {
-	.second-page-hero {
-		&__title {
-			transition: margin 0.2s ease-in-out;
-			margin: 50px auto 30px;
-		}
-	}
-}
-@media (max-width: 960px) {
-	.second-page-hero {
-		&__title {
-			margin: 50px auto 50px;
-		}
-	}
-}
-//-----------------------------------------------//
-.second-page-flex {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 15px;
-
-	&__table {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-self: center;
-		max-width: 510px;
-		min-width: 460px;
-		width: 100%;
-		box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.12);
-	}
-
-	&__descr {
-		max-width: 600px;
-	}
-}
-
-.sp-ttx {
-	margin-bottom: 120px;
-
 	&__h2 {
 		text-align: left;
 		margin-bottom: 45px;
@@ -62,90 +21,137 @@
 	&__text:not(:last-child) {
 		margin-bottom: 15px;
 	}
+	&__flex {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 15px;
+	}
+	&__descr {
+		max-width: 600px;
+	}
+	&__value {
+		max-width: 510px;
+		min-width: 460px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-self: center;
+		box-shadow: 0 4px 4px -4px rgba(20, 23, 34, 0.1),
+			0 12px 10px -6px rgba(154, 156, 165, 0.15),
+			0 30px 24px -10px rgba(154, 156, 165, 0.15),
+			0 80px 80px -20px rgba(154, 156, 165, 0.15);
+
+		&--ttx {
+			background: #fbfbfb;
+			border: 1px solid #f3f3f3;
+			padding: 60px 20px;
+		}
+		&--price {
+			background: #fbfbfb;
+			border: 1px solid #f3f3f3;
+			padding: 60px 20px;
+		}
+	}
 	&__table {
-		background: rgb(253, 253, 253);
-		border-top: 1px solid rgb(245, 245, 245);
-		border-left: 1px solid rgb(245, 245, 245);
-		padding: 60px 20px;
-	}
-	&__h3 {
-		font-weight: 400;
-		font-size: 25px;
-		line-height: 130%;
-		margin-bottom: 20px;
-	}
-}
-.table-ttx {
-	max-width: 440px;
-	font-size: clamp(0.875rem, 0.6vw + 0.5rem, 1rem);
-
-	&__row {
-		margin-bottom: 10px;
-	}
-	&__name {
-		width: 42%;
-		&--th {
-			font-weight: normal;
-			text-align: start;
+		&--ttx {
 		}
-	}
-	&__values {
-		width: 58%;
-		&--th {
-			font-weight: normal;
-			text-align: start;
+		&--price {
 		}
 	}
 }
 
-@media (max-width: 768px) {
-	.ttx {
-		&__h2 {
-			margin-bottom: 30px;
-		}
-		&__container {
-			flex-direction: column;
-			gap: 50px;
-		}
-		&__values {
-			max-width: 620px;
-			min-width: 300px;
-		}
-
-		.table-ttx {
-			max-width: 640px;
-			min-width: 290px;
-		}
-	}
-}
 @media (max-width: 960px) {
-	.ttx {
-		&__values {
+	.second-page {
+		&__h1 {
+			margin: 50px auto 50px;
+		}
+		&__value {
 			min-width: 400px;
 			padding: 40px 10px;
 		}
 	}
 }
-//-----------------------------------------------//
-.sp-prices {
-	&__container {
-		display: flex;
+@media (max-width: 768px) {
+	.second-page {
+		&__h2 {
+			margin-bottom: 30px;
+		}
+		&__flex {
+			flex-direction: column;
+			gap: 50px;
+
+			&--reverse {
+				flex-direction: column-reverse;
+			}
+		}
+		&__value {
+			max-width: 600px;
+			min-width: 300px;
+		}
 	}
-	&__table {
-	}
-	&__descr {
-	}
-	&__text {
+}
+@media (max-width: 420px) {
+	.second-page {
+		&__h1 {
+			transition: margin 0.2s ease-in-out;
+			margin: 50px auto 30px;
+		}
 	}
 }
 
-.table-spprices {
+//-----------------------------------------------//
+
+.table-sp-ttx {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+
+		max-width: 440px;
+		font-size: clamp(0.875rem, 0.6vw + 0.5rem, 1rem);
+		margin-bottom: 10px;
+		& th {
+			font-weight: normal;
+			text-align: start;
+		}
+	}
+	&__name {
+		width: 42%;
+	}
+	&__values {
+		width: 58%;
+	}
+}
+
+//-----------------------------------------------//
+.table-sp-prices {
+	width: 100%;
 	&__head {
 	}
+	&__body {
+		& tr:nth-child(2n + 1) {
+			background: #eeeeee;
+		}
+	}
 	&__row {
+		display: flex;
+		justify-content: space-between;
+		max-width: 440px;
+		font-size: clamp(0.875rem, 0.6vw + 0.5rem, 1rem);
+		margin-bottom: 10px;
+
+		& th {
+			font-weight: normal;
+			text-align: start;
+		}
 	}
 	&__plan {
+		width: 50%;
+		padding-left: 15%;
 	}
 	&__price {
+		width: 50%;
+		padding-left: 13%;
 	}
 }
