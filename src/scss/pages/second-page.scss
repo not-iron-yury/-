@@ -6,6 +6,15 @@
 .second-page {
 	margin-bottom: 120px;
 
+	&--hero {
+		background: rgb(238, 238, 238);
+		background: linear-gradient(
+			180deg,
+			rgba(238, 238, 238, 1) 0%,
+			rgba(255, 255, 255, 1) 100%
+		);
+	}
+
 	&__h1 {
 		font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
 		font-weight: 700;
@@ -30,35 +39,8 @@
 	&__descr {
 		max-width: 600px;
 	}
-	&__value {
-		max-width: 510px;
-		min-width: 460px;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-self: center;
-		box-shadow: 0 4px 4px -4px rgba(20, 23, 34, 0.1),
-			0 12px 10px -6px rgba(154, 156, 165, 0.15),
-			0 30px 24px -10px rgba(154, 156, 165, 0.15),
-			0 80px 80px -20px rgba(154, 156, 165, 0.15);
-
-		&--ttx {
-			background: #fbfbfb;
-			border: 1px solid #f3f3f3;
-			padding: 60px 20px;
-		}
-		&--price {
-			background: #fbfbfb;
-			border: 1px solid #f3f3f3;
-			padding: 60px 20px;
-		}
-	}
-	&__table {
-		&--ttx {
-		}
-		&--price {
-		}
+	&__text {
+		font-size: clamp(0.875rem, 0.6vw + 0.5rem, 1rem);
 	}
 }
 
@@ -67,14 +49,16 @@
 		&__h1 {
 			margin: 50px auto 50px;
 		}
-		&__value {
-			min-width: 400px;
-			padding: 40px 10px;
+		&__text {
+			font-size: 1rem;
 		}
 	}
 }
 @media (max-width: 768px) {
 	.second-page {
+		&--hero {
+			margin-bottom: 70px;
+		}
 		&__h2 {
 			margin-bottom: 30px;
 		}
@@ -86,14 +70,13 @@
 				flex-direction: column-reverse;
 			}
 		}
-		&__value {
-			max-width: 600px;
-			min-width: 300px;
-		}
 	}
 }
 @media (max-width: 420px) {
 	.second-page {
+		&--hero {
+			margin-bottom: 50px;
+		}
 		&__h1 {
 			transition: margin 0.2s ease-in-out;
 			margin: 50px auto 30px;
@@ -103,55 +86,4 @@
 
 //-----------------------------------------------//
 
-.table-sp-ttx {
-	&__row {
-		display: flex;
-		justify-content: space-between;
-
-		max-width: 440px;
-		font-size: clamp(0.875rem, 0.6vw + 0.5rem, 1rem);
-		margin-bottom: 10px;
-		& th {
-			font-weight: normal;
-			text-align: start;
-		}
-	}
-	&__name {
-		width: 42%;
-	}
-	&__values {
-		width: 58%;
-	}
-}
-
 //-----------------------------------------------//
-.table-sp-prices {
-	width: 100%;
-	&__head {
-	}
-	&__body {
-		& tr:nth-child(2n + 1) {
-			background: #eeeeee;
-		}
-	}
-	&__row {
-		display: flex;
-		justify-content: space-between;
-		max-width: 440px;
-		font-size: clamp(0.875rem, 0.6vw + 0.5rem, 1rem);
-		margin-bottom: 10px;
-
-		& th {
-			font-weight: normal;
-			text-align: start;
-		}
-	}
-	&__plan {
-		width: 50%;
-		padding-left: 15%;
-	}
-	&__price {
-		width: 50%;
-		padding-left: 13%;
-	}
-}

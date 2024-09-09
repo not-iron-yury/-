@@ -96,40 +96,6 @@
 	background: var(--green);
 }
 
-// ==================== таблица ==================== //
-.table tr th {
-	width: 100%;
-}
-.table tr {
-	display: flex;
-	justify-content: space-around;
-}
-.td {
-	width: 100%;
-	text-align: left;
-	padding: 0 10px;
-	margin: 0 auto;
-}
-
-@media (max-width: 968px) {
-	.table-wrapper {
-		display: flex;
-		gap: 20px;
-	}
-
-	.table tr th {
-		width: auto;
-	}
-}
-
-@media (max-width: 500px) {
-	.table-wrapper {
-		flex-direction: column;
-	}
-}
-
-// ==================== /таблица =================== //
-
 @media (max-width: 1024px) {
 	.service__main {
 		margin-bottom: 100px;
@@ -172,7 +138,6 @@
 		height: 10px;
 		border: 2px solid white;
 		opacity: 1;
-		//background: rgb(139, 139, 139);
 	}
 	.swiper-pagination-bullet-active {
 		background: var(--green);

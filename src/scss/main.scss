@@ -9,7 +9,8 @@
 @import "./blocks/footer";
 @import "./blocks/modal";
 @import "./blocks/form";
-@import "./blocks/swiper-hero-second.scss";
+@import "./blocks/swiper-hero-second-page";
+@import "./blocks/tables";
 /* Pages */
 @import "./pages/houses";
 @import "./pages/services";
@@ -275,7 +276,7 @@ h2 {
 	}
 }
 
-.table {
+.table-hp {
 	width: 100%;
 	font-weight: 400;
 	font-size: 15px;
@@ -283,16 +284,13 @@ h2 {
 	margin: 0 auto 15px;
 }
 
-.table tr {
+.tr-hp {
 	border-bottom: 1px solid var(--grey);
 }
 
-.table thead tr {
-	border-bottom: none;
-}
-
-.table td,
-.table th {
+.td-hp,
+.th-hp {
+	width: 50%;
 	font-weight: 400;
 	text-align: start;
 	white-space: wrap;
