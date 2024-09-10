@@ -1,0 +1,62 @@
+.layouts {
+	position: relative;
+	margin-bottom: 120px;
+	&__h2 {
+		font-size: clamp(1.75rem, 1.8vw + 1rem, 2.25rem);
+		text-align: left;
+	}
+	&__nav {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	.swiper-pagination-bullet-active {
+		background: var(--green);
+	}
+}
+
+.swpr-layouts {
+	position: relative;
+	padding-top: 60px;
+
+	&__nav {
+		position: absolute;
+		top: -35px;
+		right: 0px;
+	}
+	&__content {
+		padding-bottom: 60px;
+	}
+	&__slide {
+		cursor: pointer;
+		box-shadow: 0 4px 4px rgba(20, 23, 34, 0.1);
+		background: #fff;
+		border: 1px solid #f3f3f3;
+		text-align: center;
+	}
+}
+@media (max-width: 768px) {
+	.swpr-layouts {
+		padding-top: 30px;
+		&__nav {
+			display: none;
+		}
+	}
+}
+.btn-slider {
+	width: 48px;
+	height: 48px;
+	border-radius: 100%;
+	transition: all 0.3s ease-in-out;
+	& svg {
+		fill: var(--green);
+	}
+
+	&:hover {
+		background-color: var(--green);
+		& svg {
+			fill: #fff;
+		}
+	}
+}

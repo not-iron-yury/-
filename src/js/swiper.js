@@ -8524,3 +8524,33 @@ const terraceSwiper = new Swiper("#swpr-terrace", {
 	}
 });
 //-------------------------------------------------------------//
+
+
+const swprLayouts = new Swiper("#swpr-layouts", {
+	slidesPerView: 3,
+	spaceBetween: 10,
+	loop: true,
+	navigation: {
+		nextEl: "#layouts--next",
+		prevEl: "#layouts--prev",
+	},
+	pagination: {
+    el: '.swiper-pagination',
+  },
+	breakpoints: {
+		0: {
+			spaceBetween: 5,
+			slidesPerView: 1,
+		},
+		576: {
+			spaceBetween: 10,
+			slidesPerView: 2,
+		},
+		960: {
+			spaceBetween: 10,
+			slidesPerView: 3,
+		},
+	},
+
+});
+

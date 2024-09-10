@@ -16,14 +16,14 @@
 	}
 
 	&__h1 {
-		font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+		font-size: clamp(2rem, 1.8vw + 1rem, 2.75rem);
 		font-weight: 700;
 		max-width: 750px;
 		text-align: center;
 		margin: 50px auto 100px;
-		transition: margin 0.2s ease-in-out;
 	}
 	&__h2 {
+		font-size: clamp(1.75rem, 1.8vw + 1rem, 2.063rem);
 		text-align: left;
 		margin-bottom: 45px;
 	}
@@ -78,7 +78,6 @@
 			margin-bottom: 50px;
 		}
 		&__h1 {
-			transition: margin 0.2s ease-in-out;
 			margin: 50px auto 30px;
 		}
 	}

@@ -131,7 +131,7 @@
 	.service-swiper__nav {
 		display: none;
 	}
-	.swiper-pagination-bullet {
+	.service .swiper-pagination-bullet {
 		position: relative;
 		top: 5px;
 		width: 10px;
@@ -152,8 +152,3 @@
 		width: 90vw;
 	}
 }
-// @media (max-width: 420px) {
-// 	.swiper {
-// 		width: 90vw;
-// 	}
-// }

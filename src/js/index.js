@@ -10,7 +10,7 @@ const lockScroll = () => {
 };
 
 const unlockScroll = () => {
-	document.body.classList.remove("lock");
+	document.body.clasasList.remove("lock");
 };
 
 const initialMenu = () => {
