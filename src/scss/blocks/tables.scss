@@ -95,8 +95,16 @@
 	& .tbody {
 		& .tr {
 			line-height: 222%;
+
 			&:nth-child(2n + 1) {
-				background: #eeeeee;
+				background: rgb(251, 251, 251);
+				background: linear-gradient(
+					90deg,
+					rgba(251, 251, 251, 1) 0%,
+					rgba(238, 238, 238, 1) 20%,
+					rgba(245, 245, 245, 1) 85%,
+					rgba(251, 251, 251, 1) 100%
+				);
 			}
 		}
 	}
