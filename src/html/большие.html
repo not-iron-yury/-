@@ -38,92 +38,103 @@
 			Большие хозблоки для дачи купить у производителя в Московской
 			области
 		</title>
-		<link rel="stylesheet" href="./css/main.css" />
-		@@include('analitycs/google.html') @@include('analitycs/yandex.html')
+		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		@@include('analitycs/yandex.html')
 	</head>
-	<body>
+	<body id="Большие">
 		@@include('blocks/header.html')
-		<section class="hero">
-			<div class="container container__hero">
-				<h1 class="hero__title">Большие хозблоки для дачи недорого</h1>
-				<div class="hero__content">
-					<p class="hero__desc">
-						Готовые конструкции или сборка на участке
-					</p>
-					@@include('blocks/UI/hero__links.html')
+		<main>
+			<section class="hero">
+				<div class="container container__hero">
+					<h1 class="hero__title">
+						Большие хозблоки для дачи недорого
+					</h1>
+					<div class="hero__content">
+						<p class="hero__desc">
+							Готовые конструкции или сборка на участке
+						</p>
+						@@include('blocks/UI/hero__links.html')
+					</div>
 				</div>
-			</div>
-		</section>
-		@@include('blocks/why.html')
-		<section class="products" id="price">
-			<div class="container products__container">
-				<div class="products__text text">
-					<h2 class="text__title">Купить большой хозблок</h2>
-					<p class="text__text">
-						Купить большой хозблок для дачи недорого от
-						производителя Вы можете на нашем сайте. С доставкой и
-						установкой по Московской области.
-					</p>
-					<p class="text__text">
-						На этой странице представлен ряд хозяйственных блоков в
-						самых популярных планировках, в комплектации для лета и
-						зимы. Можно заказать изготовление по готовому проекту,
-						либо индивидуальное.
-					</p>
+			</section>
+			@@include('blocks/why.html')
+			<section class="products" id="price">
+				<div class="container products__container">
+					<div class="products__text text">
+						<h2 class="text__title">Купить большой хозблок</h2>
+						<p class="text__text">
+							Купить большой хозблок для дачи недорого от
+							производителя Вы можете на нашем сайте. С доставкой
+							и установкой по Московской области.
+						</p>
+						<p class="text__text">
+							На этой странице представлен ряд хозяйственных
+							блоков в самых популярных планировках, в
+							комплектации для лета и зимы. Можно заказать
+							изготовление по готовому проекту, либо
+							индивидуальное.
+						</p>
+					</div>
+					<ul class="products__list">
+						@@include('products-2/7/7011.html')
+						@@include('products-2/7/7012.html')
+						@@include('products-2/7/7013.html')
+						@@include('products-2/7/7021.html')
+						@@include('products-2/7/7022.html')
+						@@include('products-2/7/7023.html')
+					</ul>
+					<div class="products__cta cta-prod">
+						<h4 class="cta-prod__title">
+							Возможна сборка на участке
+						</h4>
+						<p class="cta-prod__desc">
+							Получите всю необходимую информацию о стоимости,
+							комплектации и срокам по телефону
+						</p>
+						<a
+							class="cta-prod__phone"
+							href="tel:89153066128"
+							onclick="ym(43781124, 'reachGoal', 'phone-1'); return true;"
+							>8 (915) 306-61-28</a
+						>
+					</div>
 				</div>
-				<ul class="products__list">
-					@@include('products-2/7/7011.html')
-					@@include('products-2/7/7012.html')
-					@@include('products-2/7/7013.html')
-					@@include('products-2/7/7021.html')
-					@@include('products-2/7/7022.html')
-					@@include('products-2/7/7023.html')
-				</ul>
-				<div class="products__cta cta-prod">
-					<h4 class="cta-prod__title">Возможна сборка на участке</h4>
-					<p class="cta-prod__desc">
-						Получите всю необходимую информацию о стоимости,
-						комплектации и срокам по телефону
-					</p>
-					<a
-						class="cta-prod__phone"
-						href="tel:89153066128"
-						onclick="ym(43781124, 'reachGoal', 'phone-1'); return true;"
-						>8 (915) 306-61-28</a
-					>
+			</section>
+			@@include('blocks/delivery.html')
+			<section class="text">
+				<div class="container">
+					<div class="text">
+						<h2 class="text__title">
+							Большие хозблоки для дачи в Московской области
+						</h2>
+						<p class="text__desc">
+							Вы получаете больше без переплаты или дополнительных
+							платежей. Покупая хозяйственный блок у нас, Вы
+							получаете больше обычного. Все наши модели
+							оснащаются гидроизоляцией и утеплением (зимние) в
+							полном объеме. Окна имеют два стекла, и сохраняют
+							больше тепла внутри.
+						</p>
+						<p class="text__desc">
+							В комплекте обязательно идут установочные бетонные
+							блоки. Вам предоставляется выбор кровельного
+							материала и дополнительных опций. По желанию,
+							выбранную модель можно переделать частично или
+							полностью.
+						</p>
+						<p class="text__desc">
+							Наше производство позволяет изготовлять модели
+							больших размеров, чем 7x2.3 метра. Однако
+							транспортировка будет осуществляться в разобранном
+							виде, а сборка на участке.
+						</p>
+					</div>
 				</div>
-			</div>
-		</section>
-		@@include('blocks/delivery.html')
-		<section class="text">
-			<div class="container">
-				<div class="text">
-					<h2 class="text__title">
-						Большие хозблоки для дачи в Московской области
-					</h2>
-					<p class="text__desc">
-						Вы получаете больше без переплаты или дополнительных
-						платежей. Покупая хозяйственный блок у нас, Вы получаете
-						больше обычного. Все наши модели оснащаются
-						гидроизоляцией и утеплением (зимние) в полном объеме.
-						Окна имеют два стекла, и сохраняют больше тепла внутри.
-					</p>
-					<p class="text__desc">
-						В комплекте обязательно идут установочные бетонные
-						блоки. Вам предоставляется выбор кровельного материала и
-						дополнительных опций. По желанию, выбранную модель можно
-						переделать частично или полностью.
-					</p>
-					<p class="text__desc">
-						Наше производство позволяет изготовлять модели больших
-						размеров, чем 7x2.3 метра. Однако транспортировка будет
-						осуществляться в разобранном виде, а сборка на участке.
-					</p>
-				</div>
-			</div>
-		</section>
-		@@include('blocks/options.html') @@include('blocks/cta.html')
-		@@include('blocks/modal-window.html') @@include('blocks/footer.html')
+			</section>
+			@@include('blocks/options.html') @@include('blocks/cta.html')
+			@@include('blocks/modal-window.html')
+		</main>
+		@@include('blocks/footer.html')
 		<script src="./js/index.js"></script>
 	</body>
 </html>

@@ -9,14 +9,16 @@ $json = file_get_contents('php://input'); // Получение json строк�
 $data = json_decode($json, true); // Преобразование json
 
 // Данные
-$name = $data['name'];
+$page = $data['page'];
+$product = $data['product'];
 $tel = $data['tel'];
 $model = $data['model'];
 $price = $data['price'];
 
 // Контент письма
 $title = 'Заявка с сайта'; // Название письма
-$body = '<p>Имя: <strong>'.$name.'</strong></p>'.
+$body = '<p>Страница: <strong>'.$page.'</strong></p>'.
+$body = '<p>Конструкция: <strong>'.$product.'</strong></p>'.
         '<p>Телефон: <a href="tel:'.$tel.'">'.$tel.'</a> <p>'.
         '<p>Модель: <strong>'.$model.'</strong></p>'.
         '<p>Цена на сайте: <strong>'.$price.'</strong></p>';

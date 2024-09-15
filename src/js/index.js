@@ -102,8 +102,8 @@ function switchDetails() {
 }
 
 // -------------------------- Модальное окно  --------------------------//
-const buttonsModal = document.querySelectorAll("[data-model]");
 const modal = document.getElementById("modal");
+const buttonsModal = document.querySelectorAll("[data-model]");
 const modalClosse = document.getElementById("modal-close");
 const form = document.querySelector(".form");
 
@@ -235,7 +235,8 @@ form.addEventListener("submit", async function (e) {
 
 	if (telValidate) {
 		const data = {
-			name: inputName.value,
+			page: document.body.id,
+			product: inputName.value,
 			tel: tel,
 			model: form.dataset.productModel || "Заявка на консультацию",
 			price: form.dataset.productPrice,
@@ -256,11 +257,6 @@ form.addEventListener("submit", async function (e) {
 			setTimeout(() => {
 				closeModal();
 			}, 2700);
-			//inputName.value = "";
-			//inputTel.value = "";
-			//form.classList.remove("form__hidden");
-			//window.location.href =
-			//("https://xn-----8kcbqbqjfnke5ad4hzb2i.xn--p1ai/заявка-отправлена.html");
 		}
 	}
 });
@@ -275,6 +271,27 @@ upButton.addEventListener("click", () => {
 		behavior: "smooth",
 	});
 });
+
+
+// ---------------------- Блок "Как мы работаем" ---------------------- //
+// подсветка исходного тригера
+const doitList = document.querySelector('.doit__list');
+if (doitList) {
+
+	const removeStyle = () => {
+		doitList.children[2].classList.remove('active');
+		doitList.removeEventListener('mouseover', removeStyle);
+	}
+	doitList.addEventListener('mouseover', removeStyle);
+
+
+}
+
+
+
+
+
+
 
 // --------------------- JS события Яндекс Метрики ---------------------//
 

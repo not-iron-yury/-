@@ -37,91 +37,98 @@
 		<title>
 			Купить маленький хозблок для дачи недорого в Московской области
 		</title>
-		<link rel="stylesheet" href="./css/main.css" />
-		@@include('analitycs/google.html') @@include('analitycs/yandex.html')
+		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		@@include('analitycs/yandex.html')
 	</head>
-	<body>
+	<body id="Маленькие">
 		@@include('blocks/header.html')
-		<section class="hero hero--small">
-			<div class="container container__hero container__hero--small">
-				<h1 class="hero__title">
-					Маленькие хозблоки для дачи недорого
-				</h1>
-				<div class="hero__content">
-					<p class="hero__desc">
-						Доставка по Москве и Московской области
-					</p>
-					@@include('blocks/UI/hero__links.html')
+		<main>
+			<section class="hero hero--small">
+				<div class="container container__hero container__hero--small">
+					<h1 class="hero__title">
+						Маленькие хозблоки для дачи недорого
+					</h1>
+					<div class="hero__content">
+						<p class="hero__desc">
+							Доставка по Москве и Московской области
+						</p>
+						@@include('blocks/UI/hero__links.html')
+					</div>
 				</div>
-			</div>
-		</section>
-		@@include('blocks/why.html')
-		<section class="products" id="price">
-			<div class="container products__container">
-				<div class="products__text text">
-					<h2 class="text__title">
-						Купить маленький хозблок для дачи
-					</h2>
-					<p class="text__text">
-						Маленькие хозблоки для дачи недорого от производителя
-						можно купить на нашем сайте. С доставкой и установкой по
-						Московской области. Предлагаем Вам отличное соотношение
-						цены и качества.
-					</p>
-					<p class="text__text">
-						На этой странице представлен ряд моделей из категории
-						«малые». В комплектации с утеплением и без такового.
-					</p>
+			</section>
+			@@include('blocks/why.html')
+			<section class="products" id="price">
+				<div class="container products__container">
+					<div class="products__text text">
+						<h2 class="text__title">
+							Купить маленький хозблок для дачи
+						</h2>
+						<p class="text__text">
+							Маленькие хозблоки для дачи недорого от
+							производителя можно купить на нашем сайте. С
+							доставкой и установкой по Московской области.
+							Предлагаем Вам отличное соотношение цены и качества.
+						</p>
+						<p class="text__text">
+							На этой странице представлен ряд моделей из
+							категории «малые». В комплектации с утеплением и без
+							такового.
+						</p>
+					</div>
+					<ul class="products__list">
+						@@include('products-2/3/3011.html')
+						@@include('products-2/4/4011.html')
+						@@include('products-2/4/4014.html')
+						@@include('products-2/3/3021.html')
+						@@include('products-2/4/4021.html')
+						@@include('products-2/4/4024.html')
+					</ul>
+					<div class="products__cta cta-prod">
+						<h4 class="cta-prod__title">
+							Возможна сборка на участке
+						</h4>
+						<p class="cta-prod__desc">
+							Получите всю необходимую информацию о стоимости,
+							комплектации и срокам по телефону
+						</p>
+						<a
+							class="cta-prod__phone"
+							href="tel:89153066128"
+							onclick="ym(43781124, 'reachGoal', 'phone-1'); return true;"
+							>8 (915) 306-61-28</a
+						>
+					</div>
 				</div>
-				<ul class="products__list">
-					@@include('products-2/3/3011.html')
-					@@include('products-2/4/4011.html')
-					@@include('products-2/4/4014.html')
-					@@include('products-2/3/3021.html')
-					@@include('products-2/4/4021.html')
-					@@include('products-2/4/4024.html')
-				</ul>
-				<div class="products__cta cta-prod">
-					<h4 class="cta-prod__title">Возможна сборка на участке</h4>
-					<p class="cta-prod__desc">
-						Получите всю необходимую информацию о стоимости,
-						комплектации и срокам по телефону
-					</p>
-					<a
-						class="cta-prod__phone"
-						href="tel:89153066128"
-						onclick="ym(43781124, 'reachGoal', 'phone-1'); return true;"
-						>8 (915) 306-61-28</a
-					>
+			</section>
+			@@include('blocks/delivery.html')
+			<section class="text">
+				<div class="container">
+					<div class="text">
+						<h2 class="text__title">Маленькие хозблоки для дачи</h2>
+						<p class="text__desc">
+							Получите больше преимуществ и выгод, покупая
+							хозяйственные блоки нашего изготовления. Мы не
+							экономим на комплектующих и материалах.
+							Гидроизоляция и утепление закладываются во все
+							стены, полы и потолок.
+						</p>
+						<p class="text__desc">
+							В комплекте к каждой модели прилагаются бетонные
+							блоки для установки на них. Лаги и днище конструкции
+							обрабатываются антисептиком. Таким образом, Ваш
+							хозяйственный блок прослужит достаточно долго.
+						</p>
+						<p class="text__desc">
+							При желании, можно усовершенствовать конструкцию.
+							Либо напротив, отказаться от ненужных элементов.
+						</p>
+					</div>
 				</div>
-			</div>
-		</section>
-		@@include('blocks/delivery.html')
-		<section class="text">
-			<div class="container">
-				<div class="text">
-					<h2 class="text__title">Маленькие хозблоки для дачи</h2>
-					<p class="text__desc">
-						Получите больше преимуществ и выгод, покупая
-						хозяйственные блоки нашего изготовления. Мы не экономим
-						на комплектующих и материалах. Гидроизоляция и утепление
-						закладываются во все стены, полы и потолок.
-					</p>
-					<p class="text__desc">
-						В комплекте к каждой модели прилагаются бетонные блоки
-						для установки на них. Лаги и днище конструкции
-						обрабатываются антисептиком. Таким образом, Ваш
-						хозяйственный блок прослужит достаточно долго.
-					</p>
-					<p class="text__desc">
-						При желании, можно усовершенствовать конструкцию. Либо
-						напротив, отказаться от ненужных элементов.
-					</p>
-				</div>
-			</div>
-		</section>
-		@@include('blocks/options.html') @@include('blocks/cta.html')
-		@@include('blocks/modal-window.html') @@include('blocks/footer.html')
+			</section>
+			@@include('blocks/options.html') @@include('blocks/cta.html')
+			@@include('blocks/modal-window.html')
+		</main>
+		@@include('blocks/footer.html')
 		<script src="./js/index.js"></script>
 	</body>
 </html>

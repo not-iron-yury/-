@@ -323,6 +323,18 @@
 		position: relative;
 		padding-top: 120px;
 
+		&.active {
+			&::after {
+				background: rgba(43, 203, 112, 0.3);
+			}
+			&::before {
+				color: #ffffff;
+				background: rgba(43, 203, 112, 0.5);
+				z-index: 2;
+				transition: all 0.3s ease-in-out;
+			}
+		}
+
 		&:not(:last-child) {
 			background-image: url("../img/svg/line.svg");
 			background-repeat: no-repeat;
@@ -339,7 +351,7 @@
 			height: 116px;
 			border-radius: 100%;
 		}
-		&:hover:after {
+		&:hover::after {
 			transition: all 0.3s ease-in-out;
 			background: rgba(43, 203, 112, 0.3);
 		}
