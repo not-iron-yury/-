@@ -101,165 +101,180 @@ function switchDetails() {
 	}
 }
 
-// -------------------------- Модальное окно  --------------------------//
-const modal = document.getElementById("modal");
-const buttonsModal = document.querySelectorAll("[data-model]");
-const modalClosse = document.getElementById("modal-close");
+// -------------------------- Форма  --------------------------//
 const form = document.querySelector(".form");
 
-// открытие модалки
-buttonsModal.forEach((elem) => {
-	// вешаем коды Метрики на кнопки
-	if (isProductCard(elem)) {
-		elem.setAttribute("onclick", "ym(43781124,'reachGoal','form-product')");
-	} else {
-		elem.setAttribute("onclick", "ym(43781124,'reachGoal','form-consult')");
-	}
+if (form) {
+	// -------------------------- Модальное окно  --------------------------//
+	const modal = document.getElementById("modal");
+	const buttonsModal = document.querySelectorAll("[data-model]");
+	const modalClosse = document.getElementById("modal-close");
 
-	// вешаем слушатель на клик по кнопке
-	elem.addEventListener("click", (e) => {
-		openModal();
-
-		// если кнопка карточки, передаем заголовок товара и его цену в форму
-		if (isProductCard(elem)) {
-			const productCard = elem.parentNode.parentNode;
-			form.dataset.productModel =
-				productCard.querySelector(".product__name").textContent;
-			form.dataset.productPrice = productCard.querySelector(
-				".product__price span"
-			).textContent;
-		}
-	});
-});
-
-function isProductCard(elem) {
-	return elem.getAttribute("data-model") !== "cta";
-}
-
-// закрытие по кнопке "close"
-modalClosse.addEventListener("click", closeModal);
-
-// закрытие через клик по серой области
-modal.addEventListener("click", (event) => {
-	if (event.target === modal) {
-		closeModal();
-	}
-});
-
-// закрытие по ESC
-document.addEventListener("keydown", (event) => {
-	const key = event.key;
-	if (key === "Escape") {
-		closeModal();
-	}
-});
-
-function openModal() {
-	modal.classList.add("modal--active");
-}
-
-function closeModal() {
-	modal.classList.remove("modal--active");
-}
-
-// ---------------------- Маска нормера телефона  ----------------------//
-
-window.addEventListener("DOMContentLoaded", function () {
-	[].forEach.call(document.querySelectorAll("#tel"), function (input) {
-		var keyCode;
-		function mask(event) {
-			event.keyCode && (keyCode = event.keyCode);
-			var pos = this.selectionStart;
-			if (pos < 3) event.preventDefault();
-			var matrix = "+7 (___) ___ ____",
-				i = 0,
-				def = matrix.replace(/\D/g, ""),
-				val = this.value.replace(/\D/g, ""),
-				new_value = matrix.replace(/[_\d]/g, function (a) {
-					return i < val.length ? val.charAt(i++) : a;
-				});
-			i = new_value.indexOf("_");
-			if (i != -1) {
-				i < 5 && (i = 3);
-				new_value = new_value.slice(0, i);
+	if (modal) {
+		// открытие модалки
+		buttonsModal.forEach((elem) => {
+			// вешаем коды Метрики на кнопки
+			if (isProductCard(elem)) {
+				elem.setAttribute("onclick", "ym(43781124,'reachGoal','form-product')");
+			} else {
+				elem.setAttribute("onclick", "ym(43781124,'reachGoal','form-consult')");
 			}
-			var reg = matrix
-				.substr(0, this.value.length)
-				.replace(/_+/g, function (a) {
-					return "\\d{1," + a.length + "}";
-				})
-				.replace(/[+()]/g, "\\$&");
-			reg = new RegExp("^" + reg + "$");
-			if (
-				!reg.test(this.value) ||
-				this.value.length < 5 ||
-				(keyCode > 47 && keyCode < 58)
-			) {
-				this.value = new_value;
-			}
-			if (event.type == "blur" && this.value.length < 5) {
-				this.value = "";
-			}
-		}
 
-		input.addEventListener("input", mask, false);
-		input.addEventListener("focus", mask, false);
-		input.addEventListener("blur", mask, false);
-		input.addEventListener("keydown", mask, false);
-	});
-});
+			// вешаем слушатель на клик по кнопке
+			elem.addEventListener("click", (e) => {
+				openModal();
 
-// ---------------------------- Валидация  -----------------------------//
-const inputName = document.getElementById("name");
-const labelTel = document.querySelector(".form__label--tel");
-const inputTel = document.getElementById("tel");
-let telValidate = false;
-
-inputTel.addEventListener("change", (e) => {
-	if (e.target.value.length !== 17) {
-		labelTel.textContent = "Номер введен не корректно";
-		labelTel.style.color = "red";
-	} else {
-		telValidate = true;
-		labelTel.innerHTML = "Номер телефона<span>*</span>";
-		labelTel.style.color = "#000000b3";
-	}
-});
-
-// ------------------------- Отправка данных  --------------------------//
-
-form.addEventListener("submit", async function (e) {
-	e.preventDefault();
-
-	const tel = inputTel.value.replace(/[\s\(\)]/g, "");
-
-	if (telValidate) {
-		const data = {
-			page: document.body.id,
-			product: inputName.value,
-			tel: tel,
-			model: form.dataset.productModel || "Заявка на консультацию",
-			price: form.dataset.productPrice,
-		};
-
-		const response = await fetch("mail.php", {
-			method: "POST",
-			body: JSON.stringify(data),
-			headers: {
-				"Content-Type": "application/json; charset=UTF-8",
-			},
+				// если кнопка карточки, передаем заголовок товара и его цену в форму
+				if (isProductCard(elem)) {
+					const productCard = elem.parentNode.parentNode;
+					form.dataset.productModel =
+						productCard.querySelector(".product__name").textContent;
+					form.dataset.productPrice = productCard.querySelector(
+						".product__price span"
+					).textContent;
+				}
+			});
 		});
-		if (response.ok) {
-			form.classList.add("form__hidden");
-			modal.querySelector(".modal__container").textContent =
-				"Ваша заявка принята. Мы свяжемся с Вами в ближайшее время.";
 
-			setTimeout(() => {
+		function isProductCard(elem) {
+			return elem.getAttribute("data-model") !== "cta";
+		}
+
+		// закрытие по кнопке "close"
+		modalClosse.addEventListener("click", closeModal);
+
+		// закрытие через клик по серой области
+		modal.addEventListener("click", (event) => {
+			if (event.target === modal) {
 				closeModal();
-			}, 2700);
+			}
+		});
+
+		// закрытие по ESC
+		document.addEventListener("keydown", (event) => {
+			const key = event.key;
+			if (key === "Escape") {
+				closeModal();
+			}
+		});
+
+		function openModal() {
+			modal.classList.add("modal--active");
+		}
+
+		function closeModal() {
+			modal.classList.remove("modal--active");
 		}
 	}
-});
+	
+
+	// ---------------------- Маска нормера телефона  ----------------------//
+
+	window.addEventListener("DOMContentLoaded", function () {
+		[].forEach.call(document.querySelectorAll("#tel"), function (input) {
+			var keyCode;
+			function mask(event) {
+				event.keyCode && (keyCode = event.keyCode);
+				var pos = this.selectionStart;
+				if (pos < 3) event.preventDefault();
+				var matrix = "+7 (___) ___ ____",
+					i = 0,
+					def = matrix.replace(/\D/g, ""),
+					val = this.value.replace(/\D/g, ""),
+					new_value = matrix.replace(/[_\d]/g, function (a) {
+						return i < val.length ? val.charAt(i++) : a;
+					});
+				i = new_value.indexOf("_");
+				if (i != -1) {
+					i < 5 && (i = 3);
+					new_value = new_value.slice(0, i);
+				}
+				var reg = matrix
+					.substr(0, this.value.length)
+					.replace(/_+/g, function (a) {
+						return "\\d{1," + a.length + "}";
+					})
+					.replace(/[+()]/g, "\\$&");
+				reg = new RegExp("^" + reg + "$");
+				if (
+					!reg.test(this.value) ||
+					this.value.length < 5 ||
+					(keyCode > 47 && keyCode < 58)
+				) {
+					this.value = new_value;
+				}
+				if (event.type == "blur" && this.value.length < 5) {
+					this.value = "";
+				}
+			}
+
+			input.addEventListener("input", mask, false);
+			input.addEventListener("focus", mask, false);
+			input.addEventListener("blur", mask, false);
+			input.addEventListener("keydown", mask, false);
+		});
+	});
+
+	// ---------------------------- Валидация  -----------------------------//
+	const inputName = document.getElementById("name");
+	const labelTel = document.querySelector(".form__label--tel");
+	const inputTel = document.getElementById("tel");
+	let telValidate = false;
+
+	inputTel.addEventListener("change", (e) => {
+		if (e.target.value.length !== 17) {
+			labelTel.textContent = "Номер введен не корректно";
+			labelTel.style.color = "red";
+		} else {
+			telValidate = true;
+			labelTel.innerHTML = "Номер телефона<span>*</span>";
+			labelTel.style.color = "#000000b3";
+		}
+	});
+
+	// ------------------------- Отправка данных  --------------------------//
+
+	form.addEventListener("submit", async function (e) {
+		e.preventDefault();
+
+		const tel = inputTel.value.replace(/[\s\(\)]/g, "");
+
+		if (telValidate) {
+			const data = {
+				page: document.body.id,
+				name: inputName.value,
+				tel: tel,
+				model: form.dataset.productModel || "Заявка на консультацию",
+				price: form.dataset.productPrice,
+			};
+
+			const response = await fetch("mail.php", {
+				method: "POST",
+				body: JSON.stringify(data),
+				headers: {
+					"Content-Type": "application/json; charset=UTF-8",
+				},
+			});
+			if (response.ok) {
+				const message = "Ваша заявка принята. Мы свяжемся с Вами в ближайшее время."
+				if (form.dataset.form === 'second') {
+					document.querySelector(".layouts-cta__subtext").textContent = message;
+					document.querySelector(".layouts-cta__subtext").style.color = "red";
+					document.getElementById("name").value = "";
+					document.getElementById("tel").value = "";
+				}
+				else {
+					form.classList.add("form__hidden");
+					modal.querySelector(".modal__container").textContent = message;
+					setTimeout(() => {
+						closeModal();
+					}, 2700);
+				}
+			}
+		}
+	});
+}
+
 
 // ----------------------------- кнопка UP -----------------------------//
 
@@ -276,15 +291,12 @@ upButton.addEventListener("click", () => {
 // ---------------------- Блок "Как мы работаем" ---------------------- //
 // подсветка исходного тригера
 const doitList = document.querySelector('.doit__list');
-if (doitList) {
 
+if (doitList) {
 	const removeStyle = () => {
 		doitList.children[2].classList.remove('active');
-		doitList.removeEventListener('mouseover', removeStyle);
 	}
-	doitList.addEventListener('mouseover', removeStyle);
-
-
+	doitList.addEventListener('mouseover', removeStyle, {once:true});
 }
 
 

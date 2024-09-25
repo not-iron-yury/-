@@ -9,10 +9,12 @@
 				src="./img/layouts/layouts-cta.jpg"
 				alt="бригадир"
 				aria-hidden="true"
+				loading="lazy"
 			/>
 		</div>
 		<div class="layouts-cta__right">
 			<form
+				data-form="second"
 				class="form layouts-cta__form"
 				action="mail.php"
 				method="post"
@@ -23,6 +25,7 @@
 					>
 					<input
 						class="form__input form__input--name"
+						value=""
 						type="text"
 						id="name"
 						name="name"
@@ -35,6 +38,7 @@
 					>
 					<input
 						class="form__input form__input--tel"
+						value=""
 						type="tel"
 						id="tel"
 						name="tel"

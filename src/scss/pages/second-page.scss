@@ -150,6 +150,7 @@
 //-----------------------------------------------//
 .layouts-cta {
 	background-color: #f4f5f6;
+	height: 444px;
 	margin-bottom: 70px;
 
 	&__flex {
@@ -188,6 +189,8 @@
 
 @media (max-width: 768px) {
 	.layouts-cta {
+		height: auto;
+
 		&__flex {
 			display: flex;
 			flex-direction: column;
@@ -322,6 +325,7 @@
 	&__item {
 		position: relative;
 		padding-top: 120px;
+		cursor: pointer;
 
 		&.active {
 			&::after {

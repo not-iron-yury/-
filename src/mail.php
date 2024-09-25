@@ -10,7 +10,7 @@ $data = json_decode($json, true); // Преобразование json
 
 // Данные
 $page = $data['page'];
-$product = $data['product'];
+$name = $data['name'];
 $tel = $data['tel'];
 $model = $data['model'];
 $price = $data['price'];
@@ -18,7 +18,7 @@ $price = $data['price'];
 // Контент письма
 $title = 'Заявка с сайта'; // Название письма
 $body = '<p>Страница: <strong>'.$page.'</strong></p>'.
-$body = '<p>Конструкция: <strong>'.$product.'</strong></p>'.
+$body = '<p>Имя: <strong>'.$name.'</strong></p>'.
         '<p>Телефон: <a href="tel:'.$tel.'">'.$tel.'</a> <p>'.
         '<p>Модель: <strong>'.$model.'</strong></p>'.
         '<p>Цена на сайте: <strong>'.$price.'</strong></p>';
@@ -41,7 +41,7 @@ try {
   $mail->setFrom('user.name@inbox.ru', 'Заявка с сайта'); // Адрес почты и имя отправителя
 
   // Получатель письма
-  $mail->addAddress('user.name@inbox.ru.com');
+  $mail->addAddress('user.name@inbox.ru');
 
   // Отправка сообщения
   if ($tel != '') {
